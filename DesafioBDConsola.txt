@@ -1,0 +1,24 @@
+SELECT Apellidos FROM empleados;
+SELECT DISTINCT Apellidos From empleados;
+SELECT * FROM empleados WHERE Apellidos = `Lopez`;
+SELECT * FROM empleados WHERE Apellidos = `Lopez` OR Apellidos = `Perez`;
+SELECT * FROM empleados WHERE depto = 14;
+SELECT * FROM empleados WHERE depto = 37 OR depto =77;
+SELECT * FROM empleados WHERE Apellidos LIKE `P%`;
+SELECT SUM(presupuesto) as Total_presupuesto FROM departamentos;
+select * from empleados inner join departamentos on empleados.depto=departamentos.ID_departamento;
+select * from empleados inner join departamentos on empleados.depto=departamentos.ID_departamento ORDER BY `ID_empleado` ASC
+SELECT * FROM empleados, departamentos WHERE depto=ID_departamento
+select * from empleados inner join departamentos on empleados.depto=departamentos.ID_departamento;
+select DNI, Nombre, Apellidos from empleados inner join departamentos on empleados.depto=departamentos.ID_departamento;
+select * from empleados E left join departamentos D on E.depto = D.ID_departamento;
+select nombre, apellidos, departamento, presupuesto from empleados full join departamentos ON depto = ID_departamento;
+SELECT nombre, apellidos FROM empleados, departamentos WHERE presupuesto>60000 && depto=id_departamento
+INSERT INTO `departamentos`(`ID_departamento`, `departamento`, `presupuesto`) VALUES (11,'calidad',40000);
+INSERT INTO `empleados`(`DNI`, `Nombre`, `Apellidos`, `depto`) VALUES (89267109,'Esther','Vazquez',11);
+UPDATE departamentos SET presupuesto = presupuesto*0.9;
+UPDATE empleados SET depto = 14 WHERE depto=77;
+DELETE FROM empleados WHERE depto = 14;
+SELECT * from empleados inner join departamentos on depto = ID_departamento where presupuesto > 90000;
+DELETE FROM empleados inner join departamentos on depto = ID_departamento where presupuesto > 90000;
+
